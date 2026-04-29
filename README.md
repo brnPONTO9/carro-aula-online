@@ -1,16 +1,38 @@
-# React + Vite
+# 📱 React Props Practice: Carros & Celular
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém um projeto prático desenvolvido para exercitar os conceitos de **Componentização** e **Props** no React.js. O objetivo foi criar componentes reutilizáveis que recebem e exibem dados dinamicamente.
 
-Currently, two official plugins are available:
+## 🚀 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A aplicação consiste em renderizar cards de especificações técnicas. O mesmo componente é utilizado para exibir diferentes dados, demonstrando o poder de reutilização das `props`.
 
-## React Compiler
+### 📋 O que foi implementado:
+*   **Componente Celular:** Exibição completa de hardware (CPU, RAM, Bateria) e interface gráfica.
+*   **Componente Carro:** Especificações de modelos populares (Kwid e Celta).
+*   **Passagem de Props:** Comunicação entre o componente pai (`App.jsx`) e os componentes filhos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias
+*   [React.js](https://reactjs.org/)
+*   [Vite](https://vitejs.dev/) (ou Create React App)
+*   JavaScript (ES6+)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💻 Exemplos de Código
+
+### Como o componente recebe os dados:
+No arquivo `Celular.jsx`, definimos a estrutura que receberá as propriedades:
+```javascript
+function Celular(props) {
+  return (
+    <>
+      <h2>{props.modelo}</h2>
+      <img src={props.imagem} alt={props.alternative} />
+      <p>Marca: {props.marca}</p>
+      <p>Memória RAM: {props.memoriaram}</p>
+      
+    </>
+  );
+}
